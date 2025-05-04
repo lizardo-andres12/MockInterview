@@ -1,0 +1,28 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test binary, build cache, result of go tool cover
+*.test
+*.prof
+*.out
+/vendor
+/bin
+
+# Go workspace file
+go.work
+
+# Go modules cache
+/go.sum
+/go.mod
+
+# IDE files
+.idea/
+*.iml
+
+# Temporary files
+*~
+# Log files
+*.log
