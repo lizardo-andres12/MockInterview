@@ -16,12 +16,12 @@ func NewUserRepository(db *sql.DB) *UserRepository {
 }
 
 func (ur *UserRepository) Create(ctx context.Context, user *models.User) error {
-	stmt, err := ur.db.PrepareContext(ctx, "insert into users email, password) values (?, ?)")
+	stmt, err := ur.db.PrepareContext(ctx, "insert into users (email, password) values (?, ?)")
 	if err != nil {
 		return err
 	}
 
-	_, err = stmt.ExecContext(ctx, user.Email, user.Password.Password)
+	_, err = stmt.ExecContext(ctx, user.Email, user.Password)
 	if err != nil {
 		return err
 	}
@@ -36,7 +36,7 @@ func (ur *UserRepository) FindByEmail(ctx context.Context, email string) (*model
 
 	var user models.User
 	row := stmt.QueryRowContext(ctx, email)
-	if err = row.Scan(&user.ID, &user.Email, &user.Password.Password); err != nil {
+	if err = row.Scan(&user.ID, &user.Email, &user.Password); err != nil {
 		return nil, err
 	}
 	return &user, nil

@@ -27,12 +27,12 @@ func (us *UserService) SignUp(ctx context.Context, user *models.User) error {
 		return fmt.Errorf("Email is already associated with an account, please log in.")
 	}
 
-	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password.Password), bcrypt.MinCost)
+	hash, err := bcrypt.GenerateFromPassword([]byte(user.Password), bcrypt.MinCost)
 	if err != nil {
 		return err
 	}
 
-	user.Password.Password = string(hash)
+	user.Password = string(hash)
 	err = us.ur.Create(ctx, user)
 	return err
 }
@@ -44,7 +44,7 @@ func (us *UserService) LogIn(ctx context.Context, email string, password string)
 	}
 
 	if err = bcrypt.CompareHashAndPassword(
-		[]byte(user.Password.Password), []byte(password),
+		[]byte(user.Password), []byte(password),
 	); err != nil {
 		return "", fmt.Errorf("Email/Password is incorrect.")
 	}
