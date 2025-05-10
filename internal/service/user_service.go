@@ -23,7 +23,7 @@ func NewUserService(ur *data.UserRepository) *UserService {
 
 func (us *UserService) SignUp(ctx context.Context, user *models.User) error {
 	_, err := us.ur.FindByEmail(ctx, user.Email)
-	if err == nil {
+	if err != nil {
 		return fmt.Errorf("Email is already associated with an account, please log in.")
 	}
 
