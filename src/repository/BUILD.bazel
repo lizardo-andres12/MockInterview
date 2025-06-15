@@ -1,0 +1,12 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "repository",
+    srcs = ["user.go"],
+    importpath = "go.mocker.com/src/repository",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/models",
+        "@io_gorm_gorm//:gorm",
+    ],
+)

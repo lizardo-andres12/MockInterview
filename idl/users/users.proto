@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+message Login {
+  required string username = 1;
+  required string password = 2;
+}
+
+message UserMetadata {
+  optional string uuid = 1;
+  optional string university = 2;
+  optional int32 grad_year = 3;
+  optional int32 grad_month = 4;
+}
+
+message NewUser {
+  Login login = 1;
+  UserMetadata metadata = 2;
+}
+
+message RegisterRequest {
+  required NewUser = 1;
+}
+
+message Error {
+  int32 code = 1;
+  string msg = 2;
+}
+
+message RegisterResponse {
+  oneof {
+    string uuid = 1;
+    Error error = 2;
+  }
+}
+
+service UserService {
+  rpc Register(NewUser)
+}

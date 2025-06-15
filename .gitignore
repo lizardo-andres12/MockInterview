@@ -26,3 +26,9 @@ go.work
 *~
 # Log files
 *.log
+
+# Bazel
+/bazel-*
+
+# Scripts
+x.sh

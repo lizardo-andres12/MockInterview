@@ -1,0 +1,15 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "controller",
+    srcs = ["auth.go"],
+    importpath = "go.mocker.com/src/controller",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//src/models",
+        "//src/repository",
+        "@com_github_golang_jwt_jwt_v5//:jwt",
+        "@org_golang_x_crypto//bcrypt",
+        "@org_uber_go_zap//:zap",
+    ],
+)
