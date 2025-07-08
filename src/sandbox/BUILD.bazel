@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "sandbox",
+    srcs = ["pool.go"],
+    importpath = "go.mocker.com/src/sandbox",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@com_github_docker_docker//api/types",
+        "@com_github_docker_docker//api/types/container",
+        "@com_github_docker_docker//api/types/image",
+        "@com_github_docker_docker//client",
+    ],
+)

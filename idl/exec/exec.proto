@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "go.mocker.com/src/proto";
+
+service ExecService {
+  rpc Execute(ExecRequest) returns (ExecResponse);
+}
+
+message ExecRequest {
+  string code = 1;
+}
+
+message ExecResponse {
+  string stdout = 1;
+  string stderr = 2;
+  int32 exit_code = 3;
+}
+

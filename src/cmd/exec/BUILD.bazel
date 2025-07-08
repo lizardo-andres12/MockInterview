@@ -1,0 +1,25 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "exec_lib",
+    srcs = ["main.go"],
+    importpath = "go.mocker.com/src/cmd/exec",
+    visibility = ["//visibility:private"],
+    deps = [
+        "//src/config",
+        "//src/controller",
+        "//src/handler",
+        "//src/proto",
+        "//src/sandbox",
+        "@com_github_docker_docker//client",
+        "@org_golang_google_grpc//:grpc",
+        "@org_uber_go_fx//:fx",
+        "@org_uber_go_zap//:zap",
+    ],
+)
+
+go_binary(
+    name = "exec",
+    embed = [":exec_lib"],
+    visibility = ["//visibility:public"],
+)

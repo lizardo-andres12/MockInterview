@@ -1,3 +1,13 @@
+# Notice
+
+For those I have discussed this idea with, I want to inform you that I will be pausing any further development on this project to concentrate fully on my internship (thank you Uber!).
+
+Along with this update, I left some architecture diagrams and implementation plans. I intended to use these as a refresher for when I return to the project, but I guess it's also a good opportunity to get some feedback on my design choices. Feel free to reach out with feedback and I will happily get back to you as soon as I can give your suggestions the time it deserves.
+
+I will resume development at full force once my intership concludes on 8/1. If you have any pressing concerns, questions, or suggestions, please reach out to me, but please keep in mind the longer response times.
+
+Enjoy your Summer!
+
 # 🧪 Mock Interview Platform
 
 A browser-based platform for conducting 1-on-1 mock interviews. Users can join a video call, share their screen, use an interview timer, and (optionally) schedule sessions using a calendar.
