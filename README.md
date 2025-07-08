@@ -46,32 +46,6 @@ A browser-based platform for conducting 1-on-1 mock interviews. Users can join a
 
 ---
 
-## 🚦 Getting Started
-
-### Backend Setup
-
-cd server
-go mod tidy
-go run cmd/app/main.go
-
-### Frontend Setup
-bash
-cd client
-npm install
-npm run dev
-🎯 Usage
-Start both frontend and backend servers.
-
-Navigate to:
-
-http://localhost:5173/room123#init (initiator)
-
-http://localhost:5173/room123 (receiver)
-
-Allow camera and mic access.
-
-The video call will start automatically.
-
 🔮 Roadmap
  Video/audio call setup
 
